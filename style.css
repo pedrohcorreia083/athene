@@ -258,6 +258,33 @@ h5 {
     color: #fff !important;
 }
 
+@media (max-width: 991px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-cta-btn {
+        display: none;
+    }
+
+    .nav-burger {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .nav-links {
+        display: flex;
+    }
+
+    .nav-burger {
+        display: none;
+    }
+}
+
+
 /* ══════════════════════════════════════════════════════════
    HERO
 ══════════════════════════════════════════════════════════ */

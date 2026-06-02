@@ -55,20 +55,36 @@ const CLIENTS_SLIDES = [
    2. MENU MOBILE
 ══════════════════════════════════════════════════════════ */
 (function initMobileMenu() {
-  const burger  = document.getElementById('navBurger');
-  const overlay = document.getElementById('mobileMenu');
-  const close   = document.getElementById('mobileClose');
-  if (!burger || !overlay) return;
+    const burger = document.getElementById('navBurger');
+    const overlay = document.getElementById('mobileMenu');
+    const close = document.getElementById('mobileClose');
 
-  burger.addEventListener('click', () => overlay.classList.add('open'));
-  close.addEventListener('click',  () => overlay.classList.remove('open'));
+    console.log({
+        burger,
+        overlay,
+        close
+    });
 
-  // Fechar ao clicar em qualquer link do overlay
-  overlay.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => overlay.classList.remove('open'));
-  });
+    if (!burger || !overlay || !close) {
+        console.error('Menu mobile não encontrado');
+        return;
+    }
+
+    burger.addEventListener('click', () => {
+        console.log('Abrindo menu');
+        overlay.classList.add('open');
+    });
+
+    close.addEventListener('click', () => {
+        overlay.classList.remove('open');
+    });
+
+    overlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            overlay.classList.remove('open');
+        });
+    });
 })();
-
 /* ══════════════════════════════════════════════════════════
    3. SCROLL TOP BUTTON
 ══════════════════════════════════════════════════════════ */
